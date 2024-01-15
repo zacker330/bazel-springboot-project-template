@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <title>404 Not Found</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="google-adsense-account" content="ca-pub-4241921911679368">
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.1.1/flowbite.min.js"></script>
+
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/htmx/1.9.10/ext/ajax-header.min.js"></script>
+
+</head>
+
+<body >
+<nav th:replace="~{fragments/nav :: nav}" class="bg-white px-6 py-2 shadow">
+</nav>
+<div class="flex items-center justify-center mb-10 mt-6">
+    <div class="p-4 mb-4 text-sm text-red-800 rounded-lg bg-blue-50 dark:bg-gray-800 dark:text-blue-400" role="alert">
+        <span class="font-medium" th:txt="${msg}">Not Found</span>
+    </div>
+</div>
+
+</body>
+</html>
