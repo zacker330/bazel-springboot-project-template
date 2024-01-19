@@ -8,9 +8,6 @@ spring:
     encoding: UTF-8
     suffix: .html
     check-template-location: true
-  web:
-    resources:
-      static-locations: classpath:/assets/
   application:
     name: bazel-springboot
   main:
