@@ -1,0 +1,18 @@
+
+
+java_library(
+    name = "domain",
+    srcs = glob(["src/main/java/**/*.java"]),
+    visibility = ["//visibility:public"],
+    deps = [
+        "//tech-lib:ioc",
+        "//tech-lib:json",
+        "//tech-lib:ioc-instance-factory",
+        "//tech-lib:pagination",
+        "@maven//:org_slf4j_slf4j_api",
+        "@maven//:org_apache_commons_commons_lang3",
+        "@maven//:io_ebean_ebean_annotation",
+        "@maven//:jakarta_persistence_jakarta_persistence_api",
+        "@maven//:com_fasterxml_jackson_core_jackson_annotations",
+    ],
+)

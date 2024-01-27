@@ -1,0 +1,26 @@
+package(default_visibility = ["//visibility:public"])
+
+java_binary(
+    name = "ebean_ddl",
+    main_class = "internal.DdlGeneratorCommand",
+    srcs = ["DdlGeneratorCommand.java"],
+    resources = [
+        "//tools/rules_ebean/src/META-INF/services:ebean_spi",
+        "//tools/rules_ebean/src:logback.xml",
+    ],
+    data = ["@maven//:io_ebean_ebean_agent"],
+    jvm_flags = ["-javaagent:$(location @maven//:io_ebean_ebean_agent)"],
+    deps =   [
+        "//domain",
+        "//third_party:repository",
+        "//third_party:db_migration",
+        "@maven//:org_xerial_sqlite_jdbc",
+        "@maven//:org_apache_commons_commons_lang3",
+        "@maven//:io_ebean_ebean_annotation",
+        "@maven//:io_ebean_ebean_sqlite",
+        "@maven//:com_fasterxml_jackson_core_jackson_databind",
+        "@maven//:com_fasterxml_jackson_datatype_jackson_datatype_jsr310",
+        "@maven//:ch_qos_logback_logback_classic",
+        "@maven//:commons_cli_commons_cli",
+    ],
+)

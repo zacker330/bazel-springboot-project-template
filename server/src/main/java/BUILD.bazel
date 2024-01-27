@@ -3,6 +3,8 @@ load("@rules_spring//springboot:springboot.bzl", "springboot")
 package(default_visibility = ["//visibility:public"])
 
 app_deps = [
+    "//domain",
+    "//dbrepository-sqlite",
     "@maven//:org_thymeleaf_thymeleaf",
     "@maven//:com_fasterxml_jackson_core_jackson_annotations",
     "@maven//:org_springframework_spring_beans",
@@ -19,7 +21,10 @@ app_deps = [
     "@maven//:jakarta_servlet_jakarta_servlet_api",
     "@maven//:org_springframework_spring_web",
     "@maven//:ch_qos_logback_logback_classic",
-    "@maven//:org_slf4j_slf4j_api"
+    "@maven//:com_fasterxml_jackson_core_jackson_databind",
+    "@maven//:org_slf4j_slf4j_api",
+    "@maven//:com_zaxxer_HikariCP",
+    "@maven//:io_ebean_ebean_api"
 ]
 
 java_library(

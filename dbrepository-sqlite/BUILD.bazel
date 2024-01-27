@@ -1,0 +1,17 @@
+package(default_visibility = ["//visibility:public"])
+
+
+
+java_library(
+    name = "dbrepository-sqlite",
+    srcs = glob(["src/main/java/**/*.java"]),
+    deps = [
+        "//domain",
+        "//tech-lib:pagination",
+        "//third_party:repository",
+        "//tech-lib:ioc",
+        "@maven//:org_apache_commons_commons_lang3",
+        "@maven//:org_xerial_sqlite_jdbc",
+        "@maven//:org_slf4j_slf4j_api",
+    ],
+)

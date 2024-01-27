@@ -12,3 +12,6 @@ spring:
     name: bazel-springboot
   main:
     banner-mode: "off"
+
+app:
+  jdbcUrl: "jdbc:sqlite:/tmp/test-domain.db"
